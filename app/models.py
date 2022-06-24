@@ -15,10 +15,10 @@ class PageManager:
         self.sections = sections
         self.currentPageIndex = 1
 
-    def getCurrentPage(self, currentPageIndex):
-        return self.pages[currentPageIndex]
+    def getCurrentPage(self):
+        return self.pages[self.currentPageIndex - 1]
 
-    def setIndex(self, index):
+    def setCurrentPageIndex(self, index):
         self.currentPageIndex = index
 
 

@@ -1,0 +1,36 @@
+:root {
+  --title-size: 64px;
+  --subtitle-size: 16px;
+  --subsection-title-size: 40px;
+  --top-margin: 1rem;
+
+  --theme: orange;
+}
+
+#info-view {
+  width: 60%;
+  margin: auto;
+}
+
+#title,
+#subtitle,
+.section-title {
+  color: var(--theme);
+}
+
+#title {
+  font-size: var(--title-size);
+  margin-top: 2rem;
+}
+
+#subtitle {
+  font-size: var(--subtitle-size);
+}
+
+.subsection {
+  font-size: var(--subsection-title-size);
+}
+
+p,
+.subsection p {
+}

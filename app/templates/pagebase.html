@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+<!---->
+{% block title %} Tutorial {% endblock %}
+<!---->
+{% block head %} {{ super() }}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static',filename='css/pages.css') }}"
+/>
+<script>
+  function addCss(rule) {
+    let css = document.createElement("style");
+    css.type = "text/css";
+    if (css.styleSheet) css.styleSheet.cssText = rule; // Support for IE
+    else css.appendChild(document.createTextNode(rule)); // Support for the rest
+    document.getElementsByTagName("head")[0].appendChild(css);
+  }
+</script>
+{% endblock %}
+<!---->
+{% block content %}
+<div id="info-view">
+  <div id="main-content">{% block maincontent %} {% endblock %}</div>
+</div>
+<div id="pagenav">{% block pagenav %} {% endblock %}</div>
+{% endblock %}

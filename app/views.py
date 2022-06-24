@@ -12,8 +12,8 @@ pages = [
     Page("logic_gate_II.html"),
 ]
 sections = [
-    Section("Preface", [1, 1], Color("#00ff99")),
-    Section("LGates", [2, 3], Color("#00ff99")),
+    Section("Preface", [1, 1], Color("#114B5F")),
+    Section("LGates", [2, 3], Color("#F4442E")),
 ]
 pageManager = PageManager(pages, sections)
 
@@ -32,14 +32,13 @@ def handle_exception(e):
 
 # Page handler
 @app.route("/tutorial/")
-def show_tutorial_page():
-    file = pageManager.getCurrentPage().file
-    pageIndex = pageManager.currentPageIndex
-    return render_template(pageManager.getCurrentPage().file)
+def load_tutorial():
+    file = "pages/" + pageManager.getCurrentPage().file
+    return render_template(file)
 
 
 # Handle jumps between pages
-@app.route("/tutorial/jumpTo/<index>")
+@app.route("/tutorial/<index>")
 def jump_to_index(index):
-    pageManager.setIndex(index)
+    pageManager.setCurrentPageIndex(index)
     return redirect(url_for("show_tutorial_page"))
