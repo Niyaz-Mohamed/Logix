@@ -6,12 +6,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="description" content="Logix" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Logix {% block title %}{% endblock %}</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static',filename='css/base.css') }}"
-    />
     <!--Font Awesome-->
     <link
       rel="stylesheet"
@@ -23,7 +17,13 @@
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
     ></script>
-    <!--Override-->
+
+    <!--To override-->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/base.css') }}"
+    />
+    <title>Logix {% block title %}{% endblock %}</title>
     {% endblock %}
   </head>
   <body>

@@ -1,0 +1,45 @@
+body {
+  position: relative;
+}
+
+#error {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  width: 50%;
+  margin: auto;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#error > * {
+  width: fit-content;
+  text-align: center;
+  margin: auto;
+}
+
+#error-img {
+  height: 120px;
+  width: 120px;
+  margin: auto;
+  image-rendering: pixelated;
+}
+
+#error-code {
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+#error-code:hover {
+  text-decoration: underline;
+}
+
+#error-desc {
+  font-weight: 600;
+  font-size: 24px;
+}
