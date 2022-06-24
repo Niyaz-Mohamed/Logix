@@ -9,7 +9,7 @@ from app.models import *
 @app.route("/")
 @app.route("/start")
 def title():
-    return render_template("base.html")
+    return render_template("title.html")
 
 
 @app.route("/<generic>/")

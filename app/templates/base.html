@@ -23,10 +23,11 @@
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
     ></script>
+    <!--Override-->
     {% endblock %}
   </head>
   <body>
-    <div id="content">{% block content %}{% endblock %}</div>
+    {% block content %} {% endblock %}
     <div id="footer">{% block footer %}{% endblock %}</div>
   </body>
 </html>

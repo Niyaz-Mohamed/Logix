@@ -1,3 +1,87 @@
 :root {
-  --col: white;
+  --normal-font-size: 16px;
+  --rich-black: #010203;
+
+  --theme: rgb(211, 156, 54);
 }
+
+@font-face {
+  font-family: scribble;
+  src: url(../fonts/scribble.otf);
+  font-stretch: expanded;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  font-family: scribble;
+  color: var(--rich-black);
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Button */
+
+.btn {
+  align-self: center;
+  border-radius: 10px 10px 10px 10px;
+  border-width: 0px;
+  outline: none;
+
+  color: white;
+  background-color: var(--rich-black);
+
+  cursor: pointer;
+  display: inline-block;
+  font: var(--scribble);
+  font-size: 26px;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-weight: bold;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  transition: all 235ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--theme);
+}
+
+/* Scrollbar */

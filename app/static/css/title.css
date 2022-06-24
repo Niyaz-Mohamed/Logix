@@ -1,0 +1,38 @@
+:root {
+  --title-size: 126px;
+}
+
+#content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#content > * {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Title text */
+.title-group {
+  margin: 0px;
+  transform: translateY(-40%);
+}
+
+#title {
+  font-family: scribble;
+  text-align: center;
+  font-size: var(--title-size);
+  height: 1em;
+  margin-bottom: 0.1em;
+  color: var(--theme);
+}
+
+#subtitle {
+  font-family: scribble;
+  text-align: center;
+  font-size: calc(var(--title-size) / 2.8);
+  height: 1em;
+}

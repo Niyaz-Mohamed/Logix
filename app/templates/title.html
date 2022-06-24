@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<!---->
+{% block head %} {{ super() }}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static',filename='css/title.css') }}"
+/>
+{% endblock %}
+<!---->
+{% block content %}
+<div id="content">
+  <div class="title-group">
+    <h1 id="title">Logix</h1>
+    <h2 id="subtitle">A tutorial</h2>
+  </div>
+  <a class="btn"> Start </a>
+</div>
+{% endblock %}
