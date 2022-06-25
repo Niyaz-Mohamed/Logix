@@ -24,10 +24,17 @@ class PageManager:
 
 # Intiialize page
 class Page:
-    def __init__(self, file, section=None, index=0):
+    def __init__(
+        self,
+        file,
+        section=None,
+        embed=None,
+        index=0,
+    ):
         self.file = file
         self.section = section
         self.index = index
+        self.embed = embed
 
 
 # * Color convenience class
@@ -64,4 +71,4 @@ class Section:
         self.name = name
         self.range = range
         self.theme = theme
-        self.alt_theme = theme.dimmed(dimFactor=0.3)
+        self.alt_theme = theme.dimmed(dimFactor=0.4)

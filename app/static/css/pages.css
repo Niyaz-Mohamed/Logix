@@ -1,36 +1,46 @@
 :root {
-  --title-size: 64px;
-  --subtitle-size: 16px;
-  --subsection-title-size: 40px;
-  --top-margin: 1rem;
-
-  --theme: orange;
+  --theme: var(--rich-black);
+  --alt-theme: var(--rich-black);
 }
 
-#info-view {
-  width: 60%;
-  margin: auto;
+#top-line {
+  padding: 0px 20px 20px 0px;
+  background-color: var(--theme);
 }
 
-#title,
-#subtitle,
-.section-title {
-  color: var(--theme);
+#nframe {
+  height: 90vh;
+  width: 100vw;
+  border: 0px solid white;
 }
 
-#title {
-  font-size: var(--title-size);
-  margin-top: 2rem;
+#nav-buttons {
+  width: 100vw;
+  display: flex;
 }
 
-#subtitle {
-  font-size: var(--subtitle-size);
+#nav-buttons > * {
+  width: 50vw;
+  border-radius: 0px;
 }
 
-.subsection {
-  font-size: var(--subsection-title-size);
+#back-btn:hover,
+#back-btn:focus {
+  background-color: var(--alt-theme);
 }
 
-p,
-.subsection p {
+#back-btn {
+  float: left;
+  border-right: 2px solid white;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#next-btn {
+  float: right;
+  border-left: 2px solid white;
+  border-radius: 10px 0px 0px 10px;
+}
+
+#footer {
+  bottom: 0px;
 }

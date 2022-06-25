@@ -3,19 +3,7 @@ from werkzeug.exceptions import HTTPException
 
 # Import custom objects
 from app import app
-from app.models import *
-
-# Initialize globals
-pages = [
-    Page("preface.html"),
-    Page("logic_gate_i.html"),
-    Page("logic_gate_II.html"),
-]
-sections = [
-    Section("Preface", [1, 1], Color("#114B5F")),
-    Section("LGates", [2, 3], Color("#F4442E")),
-]
-pageManager = PageManager(pages, sections)
+from app.globals import pageManager
 
 # Title page
 @app.route("/")
@@ -33,12 +21,26 @@ def handle_exception(e):
 # Page handler
 @app.route("/tutorial/")
 def load_tutorial():
-    file = "pages/" + pageManager.getCurrentPage().file
-    return render_template(file)
+    print(
+        pageManager.getCurrentPage().file,
+        pageManager.getCurrentPage().section.theme.hex,
+    )
+    # pageName = pageManager.getCurrentPage().file
+    # Check for page index
+    isFirstPage = pageManager.currentPageIndex == 1
+    isLastPage = pageManager.currentPageIndex == len(pageManager.pages)
+
+    return render_template(
+        "pages.html",
+        isFirstPage=isFirstPage,
+        isLastPage=isLastPage,
+        pageIndex=pageManager.currentPageIndex,
+        pageData=pageManager.getCurrentPage(),
+    )
 
 
 # Handle jumps between pages
 @app.route("/tutorial/<index>")
 def jump_to_index(index):
-    pageManager.setCurrentPageIndex(index)
-    return redirect(url_for("show_tutorial_page"))
+    pageManager.setCurrentPageIndex(int(index))
+    return redirect(url_for("load_tutorial"))

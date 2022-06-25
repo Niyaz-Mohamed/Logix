@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+<!---->
+{% block title %} Tutorial {% endblock %}
+<!---->
+{% block head %} {{ super() }}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static',filename='css/pages.css') }}"
+/>
+<script>
+  // Set page theme
+  function set_theme(theme) {
+    document.querySelector(":root").style.setProperty("--theme", theme);
+  }
+
+  // Set page accent theme
+  function set_alt_theme(alt_theme) {
+    document.querySelector(":root").style.setProperty("--alt-theme", alt_theme);
+  }
+</script>
+<!--Define metas-->
+<meta id="theme" data-name="{{ pageData.section.theme.hex }}" />
+<meta id="alt-theme" data-name="{{ pageData.section.alt_theme.hex }}" />
+{% endblock %}
+<!---->
+{% block content %}
+<div id="content">
+  <div
+    id="top-line"
+    style="padding: 10px; background-color: var(--theme)"
+  ></div>
+  <!--Main content-->
+  <iframe id="nframe" src="{{ pageData.embed }}"></iframe>
+</div>
+<script>
+  let theme = $("#theme").data().name;
+  let alt_theme = $("#alt-theme").data().name;
+  set_theme(theme);
+  set_alt_theme(alt_theme);
+</script>
+{% endblock %}
+<!--Create footer buttons-->
+{% block footer %}
+<div id="nav-buttons">
+  {% if not isFirstPage %}
+  <a
+    id="back-btn"
+    class="btn"
+    href="{{ url_for('jump_to_index', index=pageIndex-1) }}"
+  >
+    Back
+  </a>
+  {% else %}
+  <div class="filler"></div>
+  {% endif %} {% if not isLastPage %}
+  <a
+    id="next-btn"
+    class="btn"
+    href="{{ url_for('jump_to_index', index=pageIndex+1) }}"
+  >
+    Next </a
+  >{% else %}
+  <div class="filler"></div>
+  {% endif %}
+</div>
+{% endblock %}
