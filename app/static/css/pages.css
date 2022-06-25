@@ -3,20 +3,42 @@
   --alt-theme: var(--rich-black);
 }
 
-#top-line {
-  padding: 0px 20px 20px 0px;
+#section-line {
   background-color: var(--theme);
+  font-size: 14px;
+  color: white;
+  padding: 10px;
+  width: min-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-bottom-right-radius: 10px;
+}
+
+#content {
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+}
+
+#footer {
+  height: 10%;
 }
 
 #nframe {
-  height: 90vh;
   width: 100vw;
   border: 0px solid white;
+  bottom: 0px;
 }
 
 #nav-buttons {
   width: 100vw;
   display: flex;
+  /* Vertical center */
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #nav-buttons > * {

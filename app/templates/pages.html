@@ -25,10 +25,7 @@
 <!---->
 {% block content %}
 <div id="content">
-  <div
-    id="top-line"
-    style="padding: 10px; background-color: var(--theme)"
-  ></div>
+  <div id="section-line">Page {{ pageIndex }}</div>
   <!--Main content-->
   <iframe id="nframe" src="{{ pageData.embed }}"></iframe>
 </div>
