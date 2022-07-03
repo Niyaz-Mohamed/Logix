@@ -13,7 +13,11 @@
     <h1 id="title">Logix</h1>
     <h2 id="subtitle">A tutorial</h2>
   </div>
-  <a id="start-btn" class="btn" href="{{ url_for('load_tutorial') }}">
+  <a
+    id="start-btn"
+    class="btn"
+    href="{{ url_for('load_tutorial', pageIndex=1) }}"
+  >
     Start
   </a>
 </div>

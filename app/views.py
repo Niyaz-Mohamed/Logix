@@ -19,28 +19,18 @@ def handle_exception(e):
 
 
 # Page handler
-@app.route("/tutorial/")
-def load_tutorial():
-    print(
-        pageManager.getCurrentPage().file,
-        pageManager.getCurrentPage().section.theme.hex,
-    )
-    # pageName = pageManager.getCurrentPage().file
+@app.route("/tutorial/<int:pageIndex>")
+def load_tutorial(pageIndex):
+
     # Check for page index
-    isFirstPage = pageManager.currentPageIndex == 1
-    isLastPage = pageManager.currentPageIndex == len(pageManager.pages)
+    pageData = pageManager.getPageAtIndex(pageIndex)
+    isFirstPage = pageIndex == 1
+    isLastPage = pageIndex == len(pageManager.pages)
 
     return render_template(
         "pages.html",
         isFirstPage=isFirstPage,
         isLastPage=isLastPage,
-        pageIndex=pageManager.currentPageIndex,
-        pageData=pageManager.getCurrentPage(),
+        pageIndex=pageIndex,
+        pageData=pageData,
     )
-
-
-# Handle jumps between pages
-@app.route("/tutorial/<index>")
-def jump_to_index(index):
-    pageManager.setCurrentPageIndex(int(index))
-    return redirect(url_for("load_tutorial"))

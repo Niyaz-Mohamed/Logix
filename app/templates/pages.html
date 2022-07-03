@@ -43,7 +43,7 @@
   <a
     id="back-btn"
     class="btn"
-    href="{{ url_for('jump_to_index', index=pageIndex-1) }}"
+    href="{{ url_for('load_tutorial', pageIndex=pageIndex-1) }}"
   >
     Back
   </a>
@@ -53,7 +53,7 @@
   <a
     id="next-btn"
     class="btn"
-    href="{{ url_for('jump_to_index', index=pageIndex+1) }}"
+    href="{{ url_for('load_tutorial', pageIndex=pageIndex+1) }}"
   >
     Next </a
   >{% else %}

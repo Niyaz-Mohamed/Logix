@@ -13,13 +13,9 @@ class PageManager:
                 pages[i - 1].index = i
         self.pages = pages
         self.sections = sections
-        self.currentPageIndex = 1
 
-    def getCurrentPage(self):
-        return self.pages[self.currentPageIndex - 1]
-
-    def setCurrentPageIndex(self, index):
-        self.currentPageIndex = index
+    def getPageAtIndex(self, index):
+        return self.pages[index - 1]
 
 
 # Intiialize page
